@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Test - Rikkei Cinema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .breakpoint-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #e50914;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 1000;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .device-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .device-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #e50914;
+        }
+        .test-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .test-link {
+            background: #e50914;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .test-link:hover {
+            background: #f40612;
+        }
+        @media (max-width: 575px) {
+            .breakpoint-indicator {
+                background: #28a745;
+            }
+            .device-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (min-width: 576px) and (max-width: 767px) {
+            .breakpoint-indicator {
+                background: #ffc107;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .breakpoint-indicator {
+                background: #17a2b8;
+            }
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .breakpoint-indicator {
+                background: #6f42c1;
+            }
+        }
+        @media (min-width: 1200px) {
+            .breakpoint-indicator {
+                background: #e83e8c;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="breakpoint-indicator" id="breakpoint">
+        Testing: <span id="breakpoint-size"></span>
+    </div>
+
+    <div class="test-container">
+        <h1>Responsive Design Test - Rikkei Cinema</h1>
+        <p>This page helps you test the responsive design across different screen sizes.</p>
+
+        <div class="test-section">
+            <h2>Current Device Information</h2>
+            <div class="device-info">
+                <div class="device-card">
+                    <strong>Screen Width:</strong> <span id="screen-width"></span>px
+                </div>
+                <div class="device-card">
+                    <strong>Screen Height:</strong> <span id="screen-height"></span>px
+                </div>
+                <div class="device-card">
+                    <strong>Device Type:</strong> <span id="device-type"></span>
+                </div>
+                <div class="device-card">
+                    <strong>Breakpoint:</strong> <span id="current-breakpoint"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Test All Pages</h2>
+            <div class="test-links">
+                <a href="index.html" class="test-link">Homepage</a>
+                <a href="login.html" class="test-link">Login</a>
+                <a href="register.html" class="test-link">Register</a>
+                <a href="booking.html" class="test-link">Booking</a>
+                <a href="admin.html" class="test-link">Admin</a>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Responsive Features to Test</h2>
+            <ul>
+                <li><strong>Navigation:</strong> Mobile hamburger menu (appears on screens &lt; 768px)</li>
+                <li><strong>Layout:</strong> Grid adapts from 4 columns (desktop) to 1 column (mobile)</li>
+                <li><strong>Typography:</strong> Font sizes scale appropriately</li>
+                <li><strong>Images:</strong> Movie posters resize properly</li>
+                <li><strong>Buttons:</strong> Touch-friendly on mobile devices</li>
+                <li><strong>Forms:</strong> Input fields and buttons work on all screen sizes</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>How to Test</h2>
+            <ol>
+                <li>Resize your browser window to see breakpoints change</li>
+                <li>Use browser developer tools to simulate different devices</li>
+                <li>Test on actual mobile devices if possible</li>
+                <li>Check both portrait and landscape orientations</li>
+                <li>Test touch interactions on mobile devices</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h2>Breakpoint Information</h2>
+            <div class="device-info">
+                <div class="device-card">
+                    <strong>Mobile:</strong> 320px - 575px
+                    <br><small>1 column layout, hamburger menu</small>
+                </div>
+                <div class="device-card">
+                    <strong>Small Tablet:</strong> 576px - 767px
+                    <br><small>2 column layout, hamburger menu</small>
+                </div>
+                <div class="device-card">
+                    <strong>Tablet:</strong> 768px - 991px
+                    <br><small>2-3 column layout, full navigation</small>
+                </div>
+                <div class="device-card">
+                    <strong>Small Desktop:</strong> 992px - 1199px
+                    <br><small>3-4 column layout, full navigation</small>
+                </div>
+                <div class="device-card">
+                    <strong>Large Desktop:</strong> 1200px+
+                    <br><small>4 column layout, full navigation</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateDeviceInfo() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const breakpointElement = document.getElementById('breakpoint');
+            const widthElement = document.getElementById('screen-width');
+            const heightElement = document.getElementById('screen-height');
+            const deviceElement = document.getElementById('device-type');
+            const breakpointTypeElement = document.getElementById('current-breakpoint');
+            const breakpointSizeElement = document.getElementById('breakpoint-size');
+
+            widthElement.textContent = width;
+            heightElement.textContent = height;
+
+            let deviceType = '';
+            let breakpointType = '';
+            let breakpointSize = '';
+
+            if (width <= 575) {
+                deviceType = 'Mobile';
+                breakpointType = 'Mobile (320px - 575px)';
+                breakpointSize = 'Mobile';
+                breakpointElement.style.background = '#28a745';
+            } else if (width <= 767) {
+                deviceType = 'Small Tablet';
+                breakpointType = 'Small Tablet (576px - 767px)';
+                breakpointSize = 'Small Tablet';
+                breakpointElement.style.background = '#ffc107';
+            } else if (width <= 991) {
+                deviceType = 'Tablet';
+                breakpointType = 'Tablet (768px - 991px)';
+                breakpointSize = 'Tablet';
+                breakpointElement.style.background = '#17a2b8';
+            } else if (width <= 1199) {
+                deviceType = 'Small Desktop';
+                breakpointType = 'Small Desktop (992px - 1199px)';
+                breakpointSize = 'Small Desktop';
+                breakpointElement.style.background = '#6f42c1';
+            } else {
+                deviceType = 'Large Desktop';
+                breakpointType = 'Large Desktop (1200px+)';
+                breakpointSize = 'Large Desktop';
+                breakpointElement.style.background = '#e83e8c';
+            }
+
+            deviceElement.textContent = deviceType;
+            breakpointTypeElement.textContent = breakpointType;
+            breakpointSizeElement.textContent = breakpointSize;
+        }
+
+        // Update on load and resize
+        updateDeviceInfo();
+        window.addEventListener('resize', updateDeviceInfo);
+
+        // Log device info for debugging
+        console.log('Responsive Test Loaded');
+        console.log('Screen Size:', window.innerWidth + 'x' + window.innerHeight);
+        console.log('User Agent:', navigator.userAgent);
+    </script>
+</body>
+</html>

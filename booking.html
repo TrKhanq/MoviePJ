@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý vé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/booking.css">
+    <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-film icon-logo" viewBox="0 0 16 16">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+                    </svg>
+                    <div class="sidebar-brand-text">
+                        <span>Rikkei</span>
+                        <span>Cinema</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="admin.html" class="sidebar-link">Quản lý phim</a>
+                <a href="booking.html" class="sidebar-link active">Quản lý vé</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <img src="./assets/images/admin.png" alt="admin">
+                    <div class="sidebar-user-info">
+                        <p>Admin</p>
+                        <a href="#" id="logoutBtn">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main_list">
+            <div class="admin-container">
+                <div class="topbar">
+                    <div class="topbar-title">
+                        <h1>Quản lý vé đã đặt</h1>
+                        <p>Xem chi tiết, trạng thái và xử lý tất cả vé đặt trong hệ thống.</p>
+                    </div>
+                    <button class="btn-add-movie">+ Đặt vé</button>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-label">Tổng vé hôm nay</div>
+                        <div class="card-value">152</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-label">Doanh thu ngày</div>
+                        <div class="card-value">12.5trđ</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-label">Vé chờ xác nhận</div>
+                        <div class="card-value">5</div>
+                        <div class="card-note warning">Cần xử lý ngay</div>
+                    </div>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-status="all">Tất cả</button>
+                    <button class="tab-btn" data-status="paid">Đã thanh toán</button>
+                    <button class="tab-btn" data-status="pending">Chờ xử lý</button>
+                    <button class="tab-btn" data-status="cancelled">Đã hủy</button>
+                </div>
+
+                <div class="tickets-table-container">
+                    <table class="tickets-table">
+                        <thead>
+                            <tr>
+                                <th>MÃ VÉ</th>
+                                <th>KHÁCH HÀNG</th>
+                                <th>PHIM</th>
+                                <th>SUẤT CHIẾU</th>
+                                <th>GHẾ</th>
+                                <th>TỔNG TIỀN</th>
+                                <th>TRẠNG THÁI</th>
+                                <th>THAO TÁC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ticket-code">#VE-1001</td>
+                                <td>
+                                    <div class="customer-name">Nguyễn Văn A</div>
+                                    <div class="customer-phone">0987.xxx.xxx</div>
+                                </td>
+                                <td>Dune: Part Two</td>
+                                <td>10:00<br><span class="session-date">15/10/2023</span></td>
+                                <td>F12, F13</td>
+                                <td>180.000đ</td>
+                                <td><span class="status-pill paid">Đã Thanh Toán</span></td>
+                                <td>
+                                    <button class="action-btn edit">✎</button>
+                                    <button class="action-btn delete">✕</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-code">#VE-1002</td>
+                                <td>
+                                    <div class="customer-name">Trần Thị B</div>
+                                    <div class="customer-phone">0912.xxx.xxx</div>
+                                </td>
+                                <td>Mai</td>
+                                <td>13:30<br><span class="session-date">15/10/2023</span></td>
+                                <td>G5</td>
+                                <td>90.000đ</td>
+                                <td><span class="status-pill pending">Chờ xử lý</span></td>
+                                <td>
+                                    <button class="action-btn edit">✎</button>
+                                    <button class="action-btn delete">✕</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-code">#VE-1003</td>
+                                <td>
+                                    <div class="customer-name">Lê Văn C</div>
+                                    <div class="customer-phone">0909.xxx.xxx</div>
+                                </td>
+                                <td>Kung Fu Panda 4</td>
+                                <td>19:00<br><span class="session-date">15/10/2023</span></td>
+                                <td>H10, H11, H12</td>
+                                <td>270.000đ</td>
+                                <td><span class="status-pill paid">Đã Thanh Toán</span></td>
+                                <td>
+                                    <button class="action-btn edit">✎</button>
+                                    <button class="action-btn delete">✕</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-code">#VE-1004</td>
+                                <td>
+                                    <div class="customer-name">Phạm Minh D</div>
+                                    <div class="customer-phone">0933.xxx.xxx</div>
+                                </td>
+                                <td>Exhuma: Quật Mộ</td>
+                                <td>21:45<br><span class="session-date">14/10/2023</span></td>
+                                <td>E8</td>
+                                <td>90.000đ</td>
+                                <td><span class="status-pill cancelled">Đã hủy</span></td>
+                                <td>
+                                    <button class="action-btn edit">✎</button>
+                                    <button class="action-btn delete">✕</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-code">#VE-1005</td>
+                                <td>
+                                    <div class="customer-name">Hoàng Yến E</div>
+                                    <div class="customer-phone">0977.xxx.xxx</div>
+                                </td>
+                                <td>Godzilla x Kong</td>
+                                <td>09:15<br><span class="session-date">16/10/2023</span></td>
+                                <td>D4, D5</td>
+                                <td>180.000đ</td>
+                                <td><span class="status-pill pending">Chờ xử lý</span></td>
+                                <td>
+                                    <button class="action-btn edit">✎</button>
+                                    <button class="action-btn delete">✕</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <div class="results-info">Đang xem 1 đến 5 trong số 152 kết quả</div>
+                    <div class="pagination">
+                        <button class="pagination-btn">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <span class="pagination-dots">...</span>
+                        <button class="pagination-btn">10</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal đặt vé mới -->
+    <div id="bookingModal" class="modal-overlay hidden">
+        <div class="modal-box booking-modal">
+            <div class="modal-header">
+                <h2>Thêm Mới Đặt Vé</h2>
+                <button type="button" class="modal-close" id="bookingModalClose">×</button>
+            </div>
+            <form id="bookingForm" class="booking-form">
+                <div class="modal-section hidden" id="ticketCodeSection">
+                    <label class="section-label">Mã vé</label>
+                    <div class="ticket-code-display" id="ticketCodeDisplay">#---</div>
+                </div>
+
+                <!-- Nhập tên khách hàng -->
+                <div class="modal-section">
+                    <label class="section-label">Tên khách hàng</label>
+                    <input type="text" id="customerName" placeholder="Nhập tên khách hàng..." class="form-select">
+                </div>
+
+                <!-- Nhập số điện thoại -->
+                <div class="modal-section">
+                    <label class="section-label">Số điện thoại</label>
+                    <input type="tel" id="customerPhone" placeholder="Nhập số điện thoại..." class="form-select">
+                </div>
+
+                <!-- Chọn phim và suất chiếu -->
+                <div class="modal-row">
+                    <div class="modal-col">
+                        <label class="section-label">Chọn phim</label>
+                        <select id="movieId" class="form-select">
+                            <option value="">--- Chọn phim đang chiếu ---</option>
+                        </select>
+                    </div>
+                    <div class="modal-col">
+                        <label class="section-label">Chọn suất chiếu</label>
+                        <input type="datetime-local" id="showTime" class="form-select">
+                    </div>
+                </div>
+
+                <!-- Chọn ghế -->
+                <div class="modal-section">
+                    <label class="section-label">Vị trí ghế</label>
+                    <input type="text" id="seats" placeholder="F5, F6" class="form-select">
+                    <p class="seat-note">Nhập các ghế cách nhau bằng dấu phẩy.</p>
+                </div>
+
+                <!-- Phương thức thanh toán -->
+                <div class="modal-row">
+                    <div class="modal-col">
+                        <label class="section-label">Phương thức thanh toán</label>
+                        <select id="paymentMethod" class="form-select">
+                            <option value="0">Tiền mặt</option>
+                            <option value="1">Chuyển khoản</option>
+                            <option value="2">Thẻ ngân hàng</option>
+                            <option value="3">Ví điện tử</option>
+                        </select>
+                    </div>
+                    <div class="modal-col">
+                        <label class="section-label">Trạng thái thanh toán</label>
+                        <select id="paymentStatus" class="form-select">
+                            <option value="false">Chờ xử lý</option>
+                            <option value="true">Đã thanh toán</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <label class="section-label">Ghi chú</label>
+                    <textarea id="note" rows="4" placeholder="Nhập ghi chú của admin..." class="form-select"></textarea>
+                </div>
+
+                <!-- Tổng tiền dự kiến -->
+                <div class="total-section">
+                    <div class="total-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                        </svg>
+                        <div>
+                            <div class="total-text">TỔNG TIỀN DỰ KIẾN</div>
+                            <div class="total-price" id="totalPrice">0 đ</div>
+                        </div>
+                    </div>
+                    <div class="total-note" id="totalNote">0 vé × 0 đ</div>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="modal-buttons">
+                    <button type="button" class="btn-cancel" id="bookingCancelBtn">Hủy</button>
+                    <button type="submit" class="btn-submit">Xác nhận đặt vé</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal xác nhận xóa vé -->
+    <div id="deleteConfirmModal" class="modal delete-modal">
+        <div class="modal-content delete-content">
+            <div class="delete-icon">⚠️</div>
+            <h2>Xác nhận xóa vé</h2>
+            <p id="deleteMessage">Bạn có chắc chắn muốn xóa vé này không? Hành động này không thể hoàn tác.</p>
+            <div class="form-actions delete-actions">
+                <button class="btn-cancel-delete">Hủy</button>
+                <button class="btn-confirm-delete">Xóa ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal xác nhận đăng xuất -->
+    <div class="modal-overlay hidden" id="logout-modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Xác nhận đăng xuất</h3>
+                <button type="button" class="modal-close" id="logout-modal-close">×</button>
+            </div>
+            <p class="modal-text">Bạn có chắc chắn muốn đăng xuất khỏi tài khoản này?</p>
+            <div class="modal-buttons">
+                <button type="button" class="modal-button cancel" id="cancel-logout-btn">Hủy</button>
+                <button type="button" class="modal-button" id="confirm-logout-btn">Đăng xuất</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/booking.js"></script>
+</body>
+</html>
